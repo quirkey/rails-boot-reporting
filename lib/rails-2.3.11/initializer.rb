@@ -428,7 +428,6 @@ Run `rake gems:install` to install the missing gems.
             time = Time.now.to_f - start
             puts "require #{f}"
             require_dependency f
-            end
             tasks << [time, f]
           end
         end
