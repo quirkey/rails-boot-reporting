@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "rails-boot-reporting"
   gem.homepage = "http://github.com/quirkey/rails-boot-reporting"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A set of monkey patches for rails and bundler to print require/boot times}
+  gem.description = %Q{Patches, specifically for rails 2 (now) that print out require and boot times for different parts of the initialization process}
   gem.email = "aaron@quirkey.com"
   gem.authors = ["Aaron Quint"]
   # dependencies defined in Gemfile
