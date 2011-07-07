@@ -423,16 +423,18 @@ Run `rake gems:install` to install the missing gems.
           matcher = /\A#{Regexp.escape(load_path)}(.*)\.rb\Z/
           Dir.glob("#{load_path}/**/*.rb").sort.each do |file|
             f = nil
-            time = Benchmark.realtime do
+            start = Time.now.to_f
             f = file.sub(matcher, '\1')
-            puts f
+            time = Time.now.to_f - start
+            puts "require #{f}"
             require_dependency f
             end
             tasks << [time, f]
           end
         end
+      puts "---- Totals ----"
       tasks.sort.each {|t|
-        puts t.inspect
+        puts "#{t[1]}\t#{t[0]}"
       }
       end
     end
@@ -643,9 +645,9 @@ Run `rake gems:install` to install the missing gems.
     def load_application_initializers
       if gems_dependencies_loaded
         Dir["#{configuration.root_path}/config/initializers/**/*.rb"].sort.each do |initializer|
-          time = Benchmark.realtime do
+          start = Time.now.to_f
           load(initializer)
-          end
+          time = Time.now.to_f - start
           puts "#{initializer} #{time}"
         end
       end
