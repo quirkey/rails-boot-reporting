@@ -202,10 +202,11 @@ module Rails
         puts total_time
         tasks << [time,  task]
       end
-      puts "Total time: #{total_time}"
+      puts "---- Done ----"
       tasks.sort.each {|t|
-        puts t.inspect
+        puts "#{t[1]}\t#{t[0]}"
       }
+      puts "Total time: #{total_time}"
       # Flag initialized
       Rails.initialized = true
     end
