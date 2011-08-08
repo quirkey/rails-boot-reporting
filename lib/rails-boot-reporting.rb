@@ -16,7 +16,7 @@ module RailsBootReporting
 
   def install_bundler
     puts "-- Installing Bundler patches"
-    bundler_version = Bundler::Version
+    bundler_version = Bundler::VERSION
     install_file('bundler-1.0/runtime.rb', gem_path('bundler', bundler_version, 'bundler/runtime.rb'))
   end
 
