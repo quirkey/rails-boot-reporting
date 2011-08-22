@@ -20,7 +20,6 @@ module RailsBootReporting
     install_file('bundler-1.0/runtime.rb', gem_path('bundler', bundler_version, 'bundler/runtime.rb'))
   end
 
-
   def gem_path(gem, version, file)
     install_path = File.join(ENV['GEM_HOME'], 'gems', "#{gem}-#{version}", 'lib', file)
   end

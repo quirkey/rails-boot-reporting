@@ -1,7 +1,6 @@
 # This file is a patched rails initializer that prints out
 # require/load times for different aspects of the boot process
 
-
 require 'logger'
 require 'set'
 require 'pathname'
@@ -197,14 +196,13 @@ module Rails
         start = Time.now.to_f
         send(task)
         time = Time.now.to_f - start
-        total_time = total_time + time
-        puts "task: #{task} #{time}"
-        puts total_time
+        puts "task: #{task} %.3f" % time
         tasks << [time,  task]
+        total_time += time
       end
-      puts "---- Done ----"
+      puts "---- Done Initializing ----"
       tasks.sort.each {|t|
-        puts "#{t[1]}\t#{t[0]}"
+        puts "#{t[1]} #{t[0]}"
       }
       puts "Total time: #{total_time}"
       # Flag initialized
