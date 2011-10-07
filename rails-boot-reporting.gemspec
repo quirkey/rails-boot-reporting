@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "rails-boot-reporting"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aaron Quint"]
@@ -27,8 +27,9 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/install-boot-reporting",
     "lib/bundler-1.0/runtime.rb",
-    "lib/rails-2.3.11/initializer.rb",
+    "lib/rails-2.3.14/initializer.rb",
     "lib/rails-boot-reporting.rb",
+    "rails-boot-reporting.gemspec",
     "test/helper.rb",
     "test/test_rails-boot-reporting.rb"
   ]
