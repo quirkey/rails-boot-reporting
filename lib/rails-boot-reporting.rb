@@ -11,7 +11,7 @@ module RailsBootReporting
 
   def install_rails
     puts "-- Installing Rails patches"
-    install_file('rails-2.3.11/initializer.rb', gem_path('rails', '2.3.11', 'initializer.rb'))
+    install_file('rails-2.3.14/initializer.rb', gem_path('rails', '2.3.14', 'initializer.rb'))
   end
 
   def install_bundler
