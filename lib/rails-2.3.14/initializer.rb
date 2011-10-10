@@ -312,7 +312,20 @@ module Rails
     def load_gems
       unless $gems_rake_task
         puts @configuration.gems.each {|g| puts g.inspect}
-        @configuration.gems.each { |gem| gem.load }
+        _gems = []
+        total_time = 0
+        @configuration.gems.each do |gem|
+          start = Time.now.to_f
+          gem.load
+          time = Time.now.to_f - start
+          puts "gem: #{gem.name} %.3f" % time
+          _gems << [time,  "GEM: #{gem.name}"]
+          total_time += time
+        end
+        puts "---- Totals (GEMS) ----"
+        _gems.sort.each {|g|
+          puts "#{g[1]}\t#{"%.3f" % g[0]}"
+        }
       end
     end
 
