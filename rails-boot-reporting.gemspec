@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rails-boot-reporting"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aaron Quint"]
-  s.date = "2011-10-07"
+  s.date = "2012-10-22"
   s.description = "Patches, specifically for rails 2 (now) that print out require and boot times for different parts of the initialization process"
   s.email = "aaron@quirkey.com"
   s.executables = ["install-boot-reporting"]
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/install-boot-reporting",
     "lib/bundler-1.0/runtime.rb",
+    "lib/bundler-1.2/runtime.rb",
     "lib/rails-2.3.14/initializer.rb",
     "lib/rails-boot-reporting.rb",
     "rails-boot-reporting.gemspec",
@@ -36,7 +37,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/quirkey/rails-boot-reporting"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.23"
   s.summary = "A set of monkey patches for rails and bundler to print require/boot times"
 
   if s.respond_to? :specification_version then
