@@ -17,11 +17,12 @@ module RailsBootReporting
   def install_bundler
     puts "-- Installing Bundler patches"
     bundler_version = Bundler::VERSION
-    install_file('bundler-1.0/runtime.rb', gem_path('bundler', bundler_version, 'bundler/runtime.rb'))
+    short_version = bundler_version.split('.', 3)[0..1].join('.')
+    install_file("bundler-#{short_version}/runtime.rb", gem_path('bundler', bundler_version, 'bundler/runtime.rb'))
   end
 
   def gem_path(gem, version, file)
-    install_path = File.join(ENV['GEM_HOME'], 'gems', "#{gem}-#{version}", 'lib', file)
+    install_path = File.join(ENV['BUNDLE_DIR'] || ENV['GEM_HOME'], 'gems', "#{gem}-#{version}", 'lib', file)
   end
 
   def install_file(local_path, install_path)
